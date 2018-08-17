@@ -1,6 +1,8 @@
 
 var audioClip;
-var queryUrl ="http://api.voicerss.org/?key=0a7914a1376346ce8cee9c5045328467&hl=en-us&b64=true&src=You now have 15 minutes to get on the bus!";
+var alarm;
+
+var queryUrl ="http://api.voicerss.org/?key=0a7914a1376346ce8cee9c5045328467&hl=en-us&b64=true&src=it is 1 o'clock";
   $.ajax({
     url:queryUrl,
     method:"get",
@@ -15,9 +17,9 @@ var queryUrl ="http://api.voicerss.org/?key=0a7914a1376346ce8cee9c5045328467&hl=
     audioClip.play();
   });
 
-  setInterval(function() {
-    audioClip.play();
-  } ,1000);
+  // setInterval(function() {
+  //   audioClip.play();
+  // } ,1000);
   
 
   
