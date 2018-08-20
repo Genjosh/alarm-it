@@ -313,7 +313,7 @@ console.log(getInput.endZip);
        makeVoice: function(textToVoice){
         var audioClip;
         var queryUrl ="http://api.voicerss.org/?key=6d2a15e828bf429d94e8584c50d4accd&hl=en-us&b64=true&";
-        // var api= "0a7914a1376346ce8cee9c5045328467&hl=en-us&b64=true&";
+      
 
 
         
