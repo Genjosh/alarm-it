@@ -49,9 +49,9 @@ $(document).ready(function(){
         var textToVoice = "I have nothing to say right now."
         var arrTextFill = [ 
                         {ontime: "Hey ",                 close:"Getting Close ",           late: "Oh no! "},
-                        {ontime: "Well ",                close:"Don't dilly dally ",       late: "Uh oh! "},
-                        {ontime: "Lookin good ",         close:"Time's getting close ",    late: "Too Late! "},
-                        {ontime: "Looks like a nice day ",            close:"Don't panic, but ",         late: "Now were'r in trouble! "},
+                        {ontime: "Well ",                close:"Don\'t dilly dally ",       late: "Uh oh! "},
+                        {ontime: "Lookin good ",         close:"Time\'s getting close ",    late: "Too Late! "},
+                        {ontime: "Looks like a nice day ",            close:"Don\'t panic, but ",         late: "Now we\'re in trouble! "},
                         {ontime: "Hows it going ",       close:"Time to get with it ",     late: "This is not good! "},
                         {ontime: "So ",                  close:"Not much time ",           late: "I hate to tell you this! "}
                     ];
@@ -177,35 +177,65 @@ var alertIt = {
 
         textToVoice = ""
         var lng = arrTextFill.length;
+        var greetText;
+        var nameText ; 
+        var midText ;
+        var endText ;
 
         if (timeOuttheDoor < 0){   //they are too late now
 
-            var greetText = arrTextFill[Math.floor(Math.random() * lng)].late;
-            var nameText = getInput.name  + ", ";
-            var midText = " you should have been out the door ";
-            var endText = " minutes ago. Let's try it again tomorrow!";
+            greetText = arrTextFill[Math.floor(Math.random() * lng)].late;
+             nameText = getInput.name  + ", ";
+            midText = " you should have been out the door ";
+             endText = " minutes ago. Let's try it again tomorrow!";
                 timeOuttheDoor = Math.abs(timeOuttheDoor);
             clearInterval(intervalId);
 
         } else if (timeOuttheDoor < 15) {  // it's getting real close
 
-            var greetText = arrTextFill[Math.floor(Math.random() * lng)].close;
-            var nameText = getInput.name + ", ";
-            var midText = " you only have ";
-            var endText = " minutes until you need to be out the door!";
+             greetText = arrTextFill[Math.floor(Math.random() * lng)].close;
+             nameText = getInput.name + ", ";
+             midText = " you only have ";
+             endText = " minutes until you need to be out the door!";
 
         } else {   //still plenty of time
 
-            var greetText = arrTextFill[Math.floor(Math.random() * lng)].ontime;
-            var nameText = getInput.name + ", ";
-            var midText = " you still have ";
-            var endText = " minutes until you need to be out the door.";
+             greetText = arrTextFill[Math.floor(Math.random() * lng)].ontime;
+             nameText = getInput.name + ", ";
+             midText = " you still have ";
+             endText = " minutes until you need to be out the door.";
         }
 
             textToVoice = greetText + nameText + midText + timeOuttheDoor + endText;
+            alertIt.makeVoice(textToVoice);
 
             $("#alert_display").text(textToVoice);
             console.log(textToVoice);
+       },
+       makeVoice: function(textToVoice){
+        var audioClip;
+        var queryUrl ="http://api.voicerss.org/?key=6d2a15e828bf429d94e8584c50d4accd&hl=en-us&b64=true&";
+        // var api= "0a7914a1376346ce8cee9c5045328467&hl=en-us&b64=true&";
+
+
+        
+        var setWord= "src=" + textToVoice;
+        console.log("======: ", queryUrl);
+        console.log("======: ", setWord);
+        var speekNow= queryUrl + setWord;
+                $.ajax({
+                url:speekNow,
+                method:"get",
+            
+          }).then(function(response) {
+              audioClip = document.createElement("audio");
+              audioClip.setAttribute("src", response);
+              audioClip.play();
+              
+        });
+        console.log(textToVoice);
+        console.log(speekNow);
+        console.log(setWord);
        },
   
        getTimeTravel: function() {
