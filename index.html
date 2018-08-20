@@ -1,5 +1,67 @@
 <!DOCTYPE html>
 <html>
+<!-- <<<<<<< HEAD -->
+   <head>
+       <title>Alarm It</title>
+<!-- Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+ <!-- Firebase Reference -->
+ <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+ <!-- Moment.js Reference -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+ <!-- <script src="https://stream.watsonplatform.net/text-to-speech/api/v1/voices/en-US_LisaVoice"></script> -->
+</head>
+
+<body>
+   <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+   
+   
+   <!-- Header  -->
+   <div class="jumbotron">
+       <div class="container">
+           <h1>Alarm It!</h1>
+       </div>
+   </div>
+   <!-- buttons -->
+   <div id="gifButtonsView" class="container">
+   </div>
+   <!-- Main page container -->
+   <div class="container">
+       <div class="row">
+           <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+               <!-- Gifs view-->
+               <div id="gifsView"></div>
+           </div>
+           <!-- Submission form -->
+           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+               <form id="gif-form" role="form">
+                   <h2>
+                       <legend>Time Submission</legend>
+                   </h2>
+                   <div class="form-group">
+                       <label for="action-input">Add your time</label>
+                       <input type="text" id="action-input">
+                   </div>
+                   <input id="addGif" type="submit" value="Add your time" class="btn btn-primary">
+                   <input id="removeGif" type="submit" value="Reset your time" class="btn btn-prmary">
+               </form>
+           </div>
+       </div>
+   </div>
+   </div>
+   <footer>
+       <div id="footer" class="container">
+           <h3 id="copyright">&copy Copyright 2018</h3>
+       </div>
+   </footer>
+   <script type="text/javascript" src="assets/app.js"></script>
+=======
 
 <head>
     <title>On Time</title>
@@ -22,22 +84,37 @@
    
     <div class="container">
 
+<<<<<<< HEAD
+=======
+      s
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
         <div class="jumbotron">
             <h1 class="display-4">On-Time!</h1>
             <p class="lead" id="alert_display">I'm here to help you get out the door on time!</p>
             <hr class="my-4">
         
             <div class="row">
+<<<<<<< HEAD
                 
                 <div class="col-md-8">
                     <p class="stats_display" id="current_time_display">All the important information will show up here.</p>
+=======
+                <div class="col-md-4">
+                    <a id="start-alert" class="btn btn-primary btn-lg big-btn" href="#" role="button">Start the Countdown!</a>
+                </div>
+                <div class="col-md-8">
+                    <p class="stats_display" id="current_time_display"></p>
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
                     <p class="stats_display" id="arrival_time_display"></p>
                     <p class="stats_display" id="travel_time_display"></p>
                     <p  class="stats_display" id="leave_time_display"></p>
                     <p  class="stats_display" id="leave_minutes_display"></p>
+<<<<<<< HEAD
                 </div>
                 <div class="col-md-4">
                     <a id="start-alert" class="btn btn-primary btn-lg big-btn" href="#" role="button">Start the Countdown!</a>
+=======
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
                 </div>
             </div>
         </div>
@@ -46,7 +123,10 @@
             <form>
 
     <!--   1st section: Row 1:  name  arrival time   mode   and  frequency -->
+<<<<<<< HEAD
                 <div id="form-show">
+=======
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
                     <div class="form-row">
                         <div class="form-group col-md-2">
                             <input type="text" class="form-control" id="name_input" placeholder="Name to use">
@@ -86,7 +166,11 @@
                                 <input type="text" class="form-control" id="start_name_input" placeholder="Name: home..school..office">
                             </div>
                             <div class="form-group col-md-9">
+<<<<<<< HEAD
                                 <input type="text" class="form-control" id="start_address_input" text="" placeholder="Street Address...123 Main St">
+=======
+                                <input type="text" class="form-control" id="start_address_input" placeholder="Street Address...123 Main St">
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
                             </div>
                         </div>
                     </div>
@@ -163,10 +247,17 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <input type="text" class="form-control" id="end_name_input" placeholder="Name: home..school..office">
+<<<<<<< HEAD
                             </div>
                             <div class="form-group col-md-9">
                                 <input type="text" class="form-control" id="end_address_input" placeholder="Street Address...123 Main St">
                             </div>
+=======
+                            </div>
+                            <div class="form-group col-md-9">
+                                <input type="text" class="form-control" id="end_address_input" placeholder="Street Address...123 Main St">
+                            </div>
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
                         </div>
                     </div>
 <!-- 3rd Section Row 5:   end city name  state and zip code         -->              
@@ -235,12 +326,20 @@
                     </div>
                 </div>
 <!-- Row 6:  Submit Button -->
+<<<<<<< HEAD
                     <div  class="form-group">
                         <button id="add-info" type="submit" class="btn btn-primary">Submit</button>
                     </div>
         </form>
     </div>   
  </div>
+=======
+                    <div class="form-group">
+                        <button id="add-info" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+        </form>
+    </div>
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
 
     
 
@@ -250,8 +349,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
     <!-- <script src="assets/javascript/map_api.js"></script> -->
     <script src="assets/javascript/javascript.js"></script>
+=======
+
+    <script src="assets/javascript/trainschedule.js"></script>
+
+    <script src="assets/javascript/javascript.js"></script>
+
+    <script src="assets/javascript/map_api.js"></script>
+>>>>>>> d2df75cb27d6fa33feedfc56209faddc12e2bd7a
     <script src="assets/javascript/main.js"></script>
 </body>
 
